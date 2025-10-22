@@ -57,7 +57,7 @@ PRECAUTIONS & TROUBLESHOOTING
   eps=5, min_samples=5 in the code.
 
 
-  EXPECTED RESULTS
+EXPECTED RESULTS
 -------------------
 You should see visually distinct customer clusters.
 The terminal will also print segment summaries such as:
