@@ -68,3 +68,116 @@ Cluster 2: Average income, average spending (Mid-Tier)
 Cluster 3: Low income, high spending (Potential Target)
 Cluster 4: High income, low spending (Careful Spenders)
 
+
+METHOD TO FOLLOW FOR CREATING A NEW DATASET
+---------------------------------------------
+
+1. FILE NAME AND TYPE
+------------------------------------------------------------
+- The dataset must be named exactly:
+  Mall_Customers.csv
+
+- Save it in the same folder as the Python project file.
+
+- File type must be:
+  CSV (Comma-Separated Values)
+
+------------------------------------------------------------
+2. COLUMN NAMES (IMPORTANT)
+------------------------------------------------------------
+The CSV file must contain these exact column headers:
+
+CustomerID,Gender,Age,Annual Income (k$),Spending Score (1-100)
+
+Example row:
+1,Male,25,45,77
+
+------------------------------------------------------------
+3. COLUMN DETAILS AND RULES
+------------------------------------------------------------
+• CustomerID:
+  - Integer values (1, 2, 3, …)
+  - Must be unique for each record.
+
+• Gender:
+  - Only “Male” or “Female”
+  - Case-insensitive, but keep consistent.
+
+• Age:
+  - Integer values (18–70)
+  - Must not contain blanks or text.
+
+• Annual Income (k$):
+  - Integer or float value
+  - Represents income in thousands (e.g., 40 = $40,000)
+
+• Spending Score (1-100):
+  - Integer between 1 and 100
+  - Indicates spending behavior (higher = more spending)
+
+------------------------------------------------------------
+4. SAMPLE DATA FORMAT
+------------------------------------------------------------
+CustomerID,Gender,Age,Annual Income (k$),Spending Score (1-100)
+1,Male,25,45,77
+2,Female,31,32,40
+3,Male,22,50,95
+4,Female,45,80,10
+5,Male,29,60,65
+6,Female,34,35,47
+
+------------------------------------------------------------
+5. COMMON MISTAKES TO AVOID
+------------------------------------------------------------
+❌ Do not rename or remove any column headers.
+❌ Do not include extra spaces or symbols in headers.
+❌ Do not leave empty cells.
+❌ Do not save as .xls or .xlsx — only .csv.
+❌ Do not include special characters like ₹, $, or commas in numbers.
+
+------------------------------------------------------------
+6. CHECKING YOUR DATA
+------------------------------------------------------------
+To verify your dataset:
+- Open in a text editor and confirm it looks like this:
+
+CustomerID,Gender,Age,Annual Income (k$),Spending Score (1-100)
+1,Male,25,45,77
+2,Female,31,32,40
+3,Male,22,50,95
+...
+
+------------------------------------------------------------
+7. OPTIONAL – AUTO-GENERATE A VALID DATASET
+------------------------------------------------------------
+You can use this short Python script to generate a valid dataset automatically:
+
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+n = 200  # number of customers
+
+data = pd.DataFrame({
+    'CustomerID': range(1, n+1),
+    'Gender': np.random.choice(['Male', 'Female'], size=n),
+    'Age': np.random.randint(18, 70, size=n),
+    'Annual Income (k$)': np.random.randint(15, 150, size=n),
+    'Spending Score (1-100)': np.random.randint(1, 100, size=n)
+})
+
+data.to_csv('Mall_Customers.csv', index=False)
+print("✅ Mall_Customers.csv created successfully.")
+
+------------------------------------------------------------
+8. FINAL CHECK
+------------------------------------------------------------
+✔ File name: Mall_Customers.csv
+✔ Columns: 5 (exactly as listed)
+✔ Values: Numeric (except Gender)
+✔ Format: CSV
+✔ Location: Same directory as your Python file
+
+Once this structure is followed, your code will run smoothly
+and generate all plots and outputs correctly.
+
