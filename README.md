@@ -129,11 +129,11 @@ CustomerID,Gender,Age,Annual Income (k$),Spending Score (1-100)
 ------------------------------------------------------------
 5. COMMON MISTAKES TO AVOID
 ------------------------------------------------------------
-❌ Do not rename or remove any column headers.
-❌ Do not include extra spaces or symbols in headers.
-❌ Do not leave empty cells.
-❌ Do not save as .xls or .xlsx — only .csv.
-❌ Do not include special characters like ₹, $, or commas in numbers.
+ Do not rename or remove any column headers.
+ Do not include extra spaces or symbols in headers.
+ Do not leave empty cells.
+ Do not save as .xls or .xlsx — only .csv.
+ Do not include special characters like ₹, $, or commas in numbers.
 
 ------------------------------------------------------------
 6. CHECKING YOUR DATA
@@ -167,16 +167,16 @@ data = pd.DataFrame({
 })
 
 data.to_csv('Mall_Customers.csv', index=False)
-print("✅ Mall_Customers.csv created successfully.")
+print("Mall_Customers.csv created successfully.")
 
 ------------------------------------------------------------
 8. FINAL CHECK
 ------------------------------------------------------------
-✔ File name: Mall_Customers.csv
-✔ Columns: 5 (exactly as listed)
-✔ Values: Numeric (except Gender)
-✔ Format: CSV
-✔ Location: Same directory as your Python file
+ File name: Mall_Customers.csv
+ Columns: 5 (exactly as listed)
+ Values: Numeric (except Gender)
+ Format: CSV
+ Location: Same directory as your Python file
 
 Once this structure is followed, your code will run smoothly
 and generate all plots and outputs correctly.
